@@ -1,5 +1,5 @@
 <template>
-	<div class="main" :v-loading='loading'>
+	<div class="main" v-loading='loading'>
 		<div v-for='item in content'>
 			<router-link :to='{name: "userRoute", params: {userName: item.author.loginname}}'><img :src='item.author.avatar_url' :title='item.author.loginname'></router-link>
 			<div class='main-text'>

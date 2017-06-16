@@ -1,5 +1,5 @@
 <template>
-    <div class='article' :v-loading='loading'>
+    <div class='article' v-loading='loading'>
         <span class="top-span">Published on：{{createdTime}}</span>
         <router-link :to='{name:"userRoute",params:{userName: article.author.loginname}}'>Author：{{article.author.loginname}}</router-link>
         <span class="top-span">Views：{{article.visit_count}}</span>

@@ -1,6 +1,6 @@
 <template>
 <div class="user">
-	<div class="info" :v-loading='loading'>
+	<div class="info" v-loading.lock='loading'>
 		<div>
 			<img :src='userInfo.avatar_url' :title='userInfo.loginname'>
 			<span>{{ userInfo.loginname }}</span>
@@ -15,7 +15,7 @@
 			<i class="el-icon-time"></i><span>&nbsp;Register at:&nbsp; {{registerAt}}</span>
 		</div>
 	</div>
-	<div class="recent-topic" :v-loading='loading'>
+	<div class="recent-topic" v-loading.lock='loading'>
 		<p><b>Recent Topics</b></p>
 		<div v-for='(item,index) of userInfo.recent_topics' v-if='index<5'>
 			<img :src='item.author.avatar_url' :title='item.author.loginname'>
@@ -24,7 +24,7 @@
         	</router-link>
 		</div>
 	</div>
-	<div class="recent-reply" :v-loading='loading'>
+	<div class="recent-reply" v-loading.lock='loading'>
 		<p><b>Recent Replies</b></p>
 		<div v-for='(item,index) of userInfo.recent_replies' v-if='index<5'>
 			<router-link :to='{name: "userRoute", params:{userName: item.author.loginname}}'>
